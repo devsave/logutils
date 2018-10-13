@@ -59,8 +59,12 @@ class RegexCheckerDialog(QDialog):
             self.ui.lwResult.addItem('Group[%d]: %s' % (idx, regex_result.group(idx)))
 
 
-if __name__ == '__main__':
+def run():
     app = QApplication(sys.argv)
     dialog = RegexCheckerDialog()
     dialog.show()
     sys.exit(app.exec_())
+
+
+if __name__ == '__main__':
+    run()
