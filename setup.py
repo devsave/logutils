@@ -19,5 +19,9 @@ setup(
         'PyQt5>=5.11.1'
     ],
     package_dir={'': 'src'},
-    packages=find_packages('src')
+    packages=find_packages('src'),
+    include_package_data=True,
+    package_data={
+        '': ['/commands/*.bat'],
+    }
 )
