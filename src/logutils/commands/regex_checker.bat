@@ -1,1 +1,1 @@
-@python ../regex_checker/regex_checker.py
+@python %~dp0/../regex_checker/regex_checker.py
