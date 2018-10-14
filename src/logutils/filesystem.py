@@ -10,7 +10,7 @@ import re
 import datetime
 from PyQt5.QtWidgets import QFileDialog
 
-from core.UiApp import ApplicationGuard
+from logutils.ui_support import ApplicationGuard
 
 
 class StreamReader:

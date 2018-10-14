@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
-# @Time    : 2018/10/13 23:24
+# @Time    : 2018/10/14 22:58
 # @Author  : Tony Tian
 # @Email   : tiantangtl@foxmail.com
-# @File    : UiApp.py
+# @File    : ui_support.py
 
 import sys
 from PyQt5.QtWidgets import QApplication
-from core.singleton import singleton
+from logutils.core.singleton import singleton
 
 
 @singleton
