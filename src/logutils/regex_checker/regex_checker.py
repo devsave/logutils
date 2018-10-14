@@ -30,7 +30,6 @@ class RegexCheckerDialog(QDialog):
         if not regex_string:
             msg = QMessageBox()
             msg.warning(self, "提示", "请输入正则表达式！", QMessageBox.Ok)
-            msg.show()
             return
 
         is_match = True if self.ui.cbMode.currentIndex() == 0 else False
@@ -38,10 +37,19 @@ class RegexCheckerDialog(QDialog):
         if not target_string:
             msg = QMessageBox()
             msg.warning(self, "提示", "请输入目标字符串！", QMessageBox.Ok)
-            msg.show()
             return
 
-        pattern = re.compile(regex_string)
+        pattern = None
+        try:
+            pattern = re.compile(regex_string)
+        except re.error as e:
+            msg = QMessageBox()
+            msg.warning(self, "提示", "您输入的正则表达式有误！", QMessageBox.Ok)
+            pattern = None
+
+        if not pattern:
+            return
+
         if is_match:
             result = pattern.match(target_string)
         else:
